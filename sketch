@@ -10,7 +10,7 @@ int main(){
 	
 	//g20 countries down bellow
 	
-	string v[]={"Australia","Canada","Saudi arabia","US","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","","","","","","","",""}
+	string v[]={"Australia","Canada","Saudi arabia","US","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","UK","China","Indonesia","Japan","South Korea"}
 	
 	
 	
