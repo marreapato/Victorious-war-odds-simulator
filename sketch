@@ -20,7 +20,7 @@ int main(){
 
   cin>>name;
 
-  cout<<"Welcome "<<name<<", This is the first version of a War simulator, our goal is to calculate the odds of a country winning a war against the odds of the other one has, in this first version we are only using the G20 countries, excluding the EU"<<endl<<endl;
+  cout<<"Welcome "<<name<<", This is the first version of the G20 War simulator, our goal is to calculate the odds of a country winning a war based in the one the other one has, in this first version we are only using the G20 countries, excluding the EU"<<endl<<endl;
 
 cout<<"Take a look at the G20 countries: "<<endl<<endl;
   for(int i=0;i<19;i++){
