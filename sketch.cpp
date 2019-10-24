@@ -2,8 +2,8 @@
 #include<iomanip>
 #include<cmath>
 #include<string>
-#include <unistd.h>
-
+//#include <unistd.h>
+#include<Windows.h>
 
 
 using namespace std;
@@ -28,16 +28,16 @@ int main(){
 
 cout<<"Take a look at the G20 countries: "<<endl<<endl;
 
-  /*for(int i=0;i<19;i++){
-    cout<<names[i]<<" Fought = "<<wfoughts[i]<<" Won = "<<won[i]<<endl;
-    sleep(2);
-  } checking the whole information*/
-  
-  
   for(int i=0;i<19;i++){
-    cout<<names[i]<<endl;
-    sleep(2);
-  }
+    cout<<names[i]<<" Fought = "<<wfoughts[i]<<" Won = "<<won[i]<<endl;
+    Sleep(200);
+  } 
+  
+  
+  //for(int i=0;i<19;i++){
+   // cout<<names[i]<<endl;
+   // sleep(2);
+//  }
   
   return 0;
   
