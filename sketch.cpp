@@ -13,7 +13,7 @@ int main(){
 	
 	//g20 countries down bellow
 	
-	string names[19]={"Australia","Canada","Saudi arabia","US","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","UK","China","Indonesia","Japan","South Korea"};
+	string names[19]={"Australia","Canada","Saudi arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","UK","China","Indonesia","Japan","South Korea"};
   
   string name;
   string country;
