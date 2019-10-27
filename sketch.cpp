@@ -38,12 +38,11 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   for(int i=0;i<19;i++){
     cout<<names[i]<<endl;
-    Sleep(600);
+    Sleep(6);
  }
   
   cout<<"Choose the first country: ";
-  
-  cin>>country;
+  getline(cin,country);
   
   for(int i=0;i<19;i++){
   	if(names[i]==country){
@@ -55,7 +54,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   cout<<"Choose the second country(the one you are supposed to comparate): ";
   
-  cin>>country;
+    getline(cin,country);
   
   for(int i=0;i<19;i++){
   	if(names[i]==country){
@@ -73,18 +72,18 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   double oddsratio=odds1/odds2;
   
-  cout<<" The odds of "<<names[pos1]<<" a war, when compared to the odds of "<<names[pos2]<<" winning it, are ";
+  cout<<" The odds of "<<names[pos1]<<" winning a war, when compared to the odds of "<<names[pos2]<<" winning it, are ";
   
   if(round(oddsratio)<2&&round(oddsratio)>=1){
   	cout<<"almost the same";
   }else if(round(oddsratio)<1){
   	
-  	cout<<"worse";
+  	cout<<setprecision(2)<<oddsratio<<" times worse";
   
   	
   }else{
   	
-  	cout<<fixed<<setprecision(2)<<oddsratio<<" superior";
+  	cout<<fixed<<setprecision(2)<<oddsratio<<" times superior";
   }
   
   //confidence interval and significance
