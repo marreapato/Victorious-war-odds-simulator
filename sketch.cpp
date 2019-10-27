@@ -87,8 +87,20 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   }
   
   //confidence interval and significance
+  //ci = exp(log(or) ± Zl/2­*v1/a + 1/b + 1/c + 1/d), Z is the critical value, and it's supposed to be 1,96, cause we are calculating for a 95% confidence interval
+  //or is the odds ratio
+  //a is supposed the number of winnings by the 1nd country
+  //b is supposed to be the number of it's losses
+  //c is supposed to be the number of wars won by the 2nd country
+  //d is supposed to be the number of losses by the 2nd
   
-  
+  double cisup=exp(log(oddsratio)+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));
+    double cinf=exp(log(oddsratio)-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));
+    
+    cout<<endl;
+    cout<<"It's confidence interval is given by the range of:"<<endl;
+    cout<<fixed<<setprecision(2)<<"CI :("<<cinf<<" - "<<cisup<<")"<<endl;
+
   
   
   
