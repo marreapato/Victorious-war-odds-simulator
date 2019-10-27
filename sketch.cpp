@@ -14,7 +14,7 @@ int main(){
 	//g20 countries down bellow
 	
 	string names[19]={"Australia","Canada","Saudi arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","UK","China","Indonesia","Japan","South Korea"};
-  
+  bool almost=false;
   string name;
   string country;
   int pos1,pos2;
@@ -76,6 +76,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   if(round(oddsratio)<2&&round(oddsratio)>=1){
   	cout<<"almost the same";
+  	almost=true;
   }else if(round(oddsratio)<1){
   	
   	cout<<setprecision(2)<<oddsratio<<" times worse";
@@ -84,6 +85,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   }else{
   	
   	cout<<fixed<<setprecision(2)<<oddsratio<<" times superior";
+  	
   }
   
   //confidence interval and significance
@@ -99,8 +101,12 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
     
     cout<<endl;
     cout<<"It's confidence interval is given by the range of:"<<endl;
+    
     cout<<fixed<<setprecision(2)<<"CI :("<<cinf<<" - "<<cisup<<")"<<endl;
 
+if(cinf>0&&cinf<=1&&cisup>=1&&almost==false){
+	cout<<"but these results have no significance which means you may be being tricked";
+}
   
   
   
