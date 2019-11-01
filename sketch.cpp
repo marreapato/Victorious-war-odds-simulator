@@ -25,6 +25,18 @@ int main(){
   cout<<"Hello user, my name is WS1, tell me your name: ";
 
   getline(cin,name);
+  
+  name[0]=toupper(name[0]);
+  
+  int tamnam=name.size();
+  
+  for(int i=0;i<tamnam;i++){
+  	
+  	if(name[i]==' '){
+  		name[i+1]=toupper(name[i+1]);
+	  }
+  	
+  }//all the first letters of the names and surnames to upper case
 
   cout<<"Welcome "<<name<<", This is the first version of the G20 War simulator, our goal is to calculate the odds of a country winning a war based in the information the other one has, in this first version we are only using the G20 countries, excluding the EU"<<endl<<endl;
 
@@ -38,11 +50,19 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   for(int i=0;i<19;i++){
     cout<<names[i]<<endl;
-    Sleep(6);
+    Sleep(600);
  }
   
   cout<<"Choose the first country: ";
   getline(cin,country);
+  
+  int tamc=country.size();
+  country[0]=toupper(country[0]);
+  for(int i=0;i<tamc;i++){
+  	if(country[i]==' '){
+  		country[i+1]=toupper(country[i+1]);
+	  }
+  }
   
   for(int i=0;i<19;i++){
   	if(names[i]==country){
@@ -56,6 +76,14 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
     getline(cin,country);
   
+  tamc=country.size();
+  
+  country[0]=toupper(country[0]);
+  for(int i=0;i<tamc;i++){
+  	if(country[i]==' '){
+  		country[i+1]=toupper(country[i+1]);
+	  }
+  }
   for(int i=0;i<19;i++){
   	if(names[i]==country){
   		pos2=i;
@@ -100,7 +128,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
     double cinf=exp(log(oddsratio)-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));
     
     cout<<endl;
-    cout<<"It's confidence interval is given by the range of:"<<endl;
+    cout<<"It's confidence interval is given by the range of:"<<endl<<endl;
     
     cout<<fixed<<setprecision(2)<<"CI :("<<cinf<<" - "<<cisup<<")"<<endl;
 
