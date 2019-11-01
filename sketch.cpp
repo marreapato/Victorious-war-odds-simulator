@@ -13,8 +13,7 @@ int main(){
 	
 	//g20 countries down bellow
 	
-	string names[19]={"Australia","Canada","Saudi arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","UK","China","Indonesia","Japan","South Korea"};
-  bool almost=false;
+	string names[19]={"Australia","Canada","Saudi arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","Uk","China","Indonesia","Japan","South Korea"};
   string name;
   string country;
   int pos1,pos2;
@@ -104,7 +103,6 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   if(round(oddsratio)<2&&round(oddsratio)>=1){
   	cout<<"almost the same";
-  	almost=true;
   }else if(round(oddsratio)<1){
   	
   	cout<<setprecision(2)<<oddsratio<<" times worse";
@@ -132,10 +130,33 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
     
     cout<<fixed<<setprecision(2)<<"CI :("<<cinf<<" - "<<cisup<<")"<<endl;
 
-if(cinf>0&&cinf<=1&&cisup>=1&&almost==false){
-	cout<<"but these results have no significance which means you may be being tricked";
+if(cinf>0&&cinf<=1&&cisup>=1){
+	cout<<"But these results have no significance which means you may be being tricked"<<endl;
 }
   
+  cout<<"Would you like to learn a little about some of these countries?"<<endl;
+  
+  cout<<"Yes or No? R = ";
+  
+  string opt;
+  
+  cin>>opt;
+  cin.ignore();
+  
+  if(opt=="no"||opt=="No"){
+  	cout<<"Well, it was nice to meet you "<<name<<endl;
+  	Sleep(600);
+  	cout<<"See you soon!"<<endl;
+  	  	Sleep(600);
+
+  	cout<<"I hope..."<<endl;
+  	  	Sleep(600);
+
+  	cout<<":D"<<endl;
+  
+  return 0;
+  
+  }
   
   
   
