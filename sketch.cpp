@@ -14,6 +14,8 @@ int main(){
 	//g20 countries down bellow
 	
 	string names[19]={"Australia","Canada","Saudi arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","Uk","China","Indonesia","Japan","South Korea"};
+  string questions[]={"Which country fought most wars?","Which country won most wars?","Which country lost most wars?"};
+
   string name;
   string country;
   int pos1,pos2;
@@ -129,6 +131,8 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
     cout<<"It's confidence interval is given by the range of:"<<endl<<endl;
     
     cout<<fixed<<setprecision(2)<<"CI :("<<cinf<<" - "<<cisup<<")"<<endl;
+    int tamq=sizeof(questions); 
+
 
 if(cinf>0&&cinf<=1&&cisup>=1){
 	cout<<"But these results have no significance which means you may be being tricked"<<endl;
@@ -156,7 +160,17 @@ if(cinf>0&&cinf<=1&&cisup>=1){
   
   return 0;
   
-  }
+  }else{
+ cout<<"What would you like to know?"<<endl;
+ 
+ cout<<"Here are some suggestions you could ask me :"<<endl<<endl;
+ 
+ for(int i=0;i<3;i++){
+ 	cout<<i+1<<" = "<<questions[i]<<endl<<endl;
+ 	Sleep(600);
+ }  
+ return 0;
+}
   
   
   
