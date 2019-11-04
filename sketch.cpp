@@ -13,7 +13,7 @@ int main(){
 	
 	//g20 countries down bellow
 	
-	string names[19]={"Australia","Canada","Saudi arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","Uk","China","Indonesia","Japan","South Korea"};
+	string names[19]={"Australia","Canada","Saudi Arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","Uk","China","Indonesia","Japan","South Korea"};
   string questions[]={"Which country fought most wars?","Which country won most wars?","Which country lost most wars?"};
 
   string name;
