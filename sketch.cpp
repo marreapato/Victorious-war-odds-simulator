@@ -163,7 +163,7 @@ if(cinf>0&&cinf<=1&&cisup>=1){
   }else{
  cout<<"What would you like to know?"<<endl;
  
- cout<<"Here are some suggestions you could ask me :"<<endl<<endl;
+ cout<<"Here are some suggestions you could ask me about the G20 :"<<endl<<endl;
  
  for(int i=0;i<3;i++){
  	cout<<i+1<<" = "<<questions[i]<<endl<<endl;
