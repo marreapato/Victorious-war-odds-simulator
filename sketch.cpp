@@ -218,7 +218,7 @@ if(cinf>0&&cinf<=1&&cisup>=1){
   	
   }//all the first letters of the names and surnames to upper case
 
-cout<<"Bem vindo "<<name<<", esta e a primeira versao do simulador de guerra do G20, nosso objetivo e calcular as chances de um pais vencer uma guerra com base nas informacoes que o outro possui, nesta primeira versao estamos usando apenas os países do G20, excluindo a UE."<< endl << endl;
+cout<<"Bem vindo "<<name<<", esta e a primeira versao do simulador de guerra do G20, nosso objetivo e calcular as chances de um pais vencer uma guerra com base nas informacoes que o outro possui, nesta primeira versao estamos usando apenas os paises do G20, excluindo a UE."<< endl << endl;
 }
 cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
 
