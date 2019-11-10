@@ -51,7 +51,7 @@ countries winning a war, and then calculate this statistic for the odds of the f
 war when compared to the second one, the algorithm also calculates the confidence interval for the
 odds ratio, and tells if the odds ratio calculated do not have a strong significance level.
 
-# **What’s an odd ratio?**
+# **What’s an odds ratio?**
 
 Usually used in epidemiological studies the odds ratio is a statistic utilized by statisticians and
 researchers to analyse the risk of one group exposed to some characteristic that would be interesting
