@@ -5,7 +5,8 @@ G20 Countries war simulator
 c++ project
 Lucas Rabelo
 Introduction to programming logic.
-#**Report**
+
+# **Report**
 
 In order to create a project to the introduction to programming logic course (named formely by data
 processing in Federal University of Bahia-Brazil), it was proposed the creation of a war simulator,
@@ -42,7 +43,7 @@ The number of wars fought by each country was searched into wikipedia, using the
 terms:”Number of wars fought by (country name)”, “Wars fought by (Country name)” and “Battles
 fought by (Country name)”.
 
-#**What’s the algorithm designed to do?**
+# **What’s the algorithm designed to do?**
 
 By using a briefly empirical evidence given by a research in the internet, amongst the wars fought by
 the G20 countries, the algorithm is supposed to store two countries, and calculate the odds of both
@@ -50,7 +51,7 @@ countries winning a war, and then calculate this statistic for the odds of the f
 war when compared to the second one, the algorithm also calculates the confidence interval for the
 odds ratio, and tells if the odds ratio calculated do not have a strong significance level.
 
-#**What’s an odd ratio?**
+# **What’s an odd ratio?**
 
 Usually used in epidemiological studies the odds ratio is a statistic utilized by statisticians and
 researchers to analyse the risk of one group exposed to some characteristic that would be interesting
@@ -59,7 +60,7 @@ In this project the odds ratio were adapted to calculate the odds of a country w
 compared to other(Be careful: The algorithm does not calculate the odds of one country winning a war
 against another one, but the odds of a country winning a war when compared to another one).
 
-#**Details...**
+# **Details...**
 
 For the record, considering that countries like United States usually pick harder battles, and countries
 like Brazil(which only lost one war) fought easier ones when compared to the US, some results may
