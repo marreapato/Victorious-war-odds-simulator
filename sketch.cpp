@@ -98,17 +98,10 @@ int main(){
 
 cout<<"Take a look at the G20 countries: "<<endl<<endl;
 
-//funame(names,0,19);
-
-  //for(int i=0;i<19;i++){
-    //cout<<names[i]<<" Fought = "<<wfoughts[i]<<" Won = "<<won[i]<<endl;
-    //Sleep(200);
- // } 
-  
   
   for(int i=0;i<19;i++){
     cout<<names[i]<<endl;
-    recursiveSleep(0,20);//instead of using time/100=seconds uses number/10=seconds
+    recursiveSleep(0,20);//instead of using time/100=seconds uses time/10=seconds
  }
   
   cout<<"Choose the first country: ";
@@ -128,7 +121,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
 	  }
   }
   
-  cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" wars and won "<<fixed<<setprecision(0)<<won[pos1]<<endl;
+  cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" wars and won "<<fixed<<setprecision(0)<<won[pos1]<<endl<<endl;
   
   cout<<"Choose the second country(the one you are supposed to comparate): ";
   
@@ -200,12 +193,12 @@ if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,w
   
   if(opt=="no"||opt=="No"){
   	cout<<"Well, it was nice to meet you "<<name<<endl;
-  	Sleep(600);
+  	recursiveSleep(0,20);
   	cout<<"See you soon!"<<endl;
-  	  	Sleep(600);
+  	  	recursiveSleep(0,20);
 
   	cout<<"I hope..."<<endl;
-  	  	Sleep(600);
+  	  	recursiveSleep(0,20);
 
   	cout<<":D"<<endl;
   
@@ -239,17 +232,10 @@ cout<<"Bem vindo "<<name<<", esta e a primeira versao do simulador de guerra do 
 }
 cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
 
-//funame(names,0,19);
-
-  //for(int i=0;i<19;i++){
-    //cout<<names[i]<<" Fought = "<<wfoughts[i]<<" Won = "<<won[i]<<endl;
-    //Sleep(200);
- // } 
-  
   
   for(int i=0;i<19;i++){
     cout<<namesbr[i]<<endl;
-    Sleep(600);
+recursiveSleep(0,20);
  }
   
   cout<<"Escolha o primeiro pais: ";
@@ -270,7 +256,7 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   }
   
   
-  cout<<country<<" Lutou "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" guerras e ganhou "<<fixed<<setprecision(0)<<won[pos1]<<endl;
+  cout<<country<<" Lutou "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" guerras e ganhou "<<fixed<<setprecision(0)<<won[pos1]<<endl<<endl;
   
   cout<<"Escolha o segundo pais(aquele que usara para como comparacao): ";
   
@@ -334,12 +320,12 @@ if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,w
   
   if(opt=="nao"||opt=="Nao"){
   	cout<<"Foi bom te conhecer! "<<name<<endl;
-  	Sleep(600);
+  	recursiveSleep(0,20);
   	cout<<"Te vejo em breve!"<<endl;
-  	  	Sleep(600);
+  	  	recursiveSleep(0,20);
 
   	cout<<"Eu espero..."<<endl;
-  	  	Sleep(600);
+  	  	recursiveSleep(0,20);
 
   	cout<<":D"<<endl;
   
