@@ -44,29 +44,15 @@ return cinf;
 
 
 //building some recursive algorithms 
-	
-/*string funame(string v[],int i,int tam){
-	
-	if(i<tam){
-		
-		cout<<funame(v,i+1,tam)<<endl;
-				return funame(v,i+1,tam);
 
+int recursiveSleep(int i,int size){
+	if(i<size){
+		
+		Sleep(i);
+		return recursiveSleep(i+1,size);
 	}
-}*/
+}
 
-/*int find(int v[],int tam,int i, int pos){
-	
-	if(i<tam){
-		return find(v,tam,i+1,pos);
-		
-	}else if(i==pos){
-		cout<<v[i];
-		
-	}
-	
-	
-}*/
 int main(){
 	int freq=0;
 	//g20 countries down bellow
@@ -122,7 +108,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   for(int i=0;i<19;i++){
     cout<<names[i]<<endl;
-    Sleep(600);
+    recursiveSleep(0,20);//instead of using time/100=seconds uses number/10=seconds
  }
   
   cout<<"Choose the first country: ";
