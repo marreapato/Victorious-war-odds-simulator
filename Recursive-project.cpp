@@ -71,6 +71,14 @@ int recursiveSleep(int i,int size){
 	}
 }
 
+int recursivePrint(int size,int i, string names[]){
+ 	if(i<size){
+ 		cout<<names[i]<<endl;
+ 		Sleep(200);
+ 		return recursivePrint(size,i+1,names);
+	 }
+ }
+
 int main(){
 	int freq=0;
 	//g20 countries down bellow
@@ -117,10 +125,7 @@ int main(){
 cout<<"Take a look at the G20 countries: "<<endl<<endl;
 
   
-  for(int i=0;i<19;i++){
-    cout<<names[i]<<endl;
-    recursiveSleep(0,20);//instead of using time/100=seconds uses time/10=seconds
- }
+  recursivePrint(19,0,names);
   
   cout<<"Choose the first country: ";
   getline(cin,country);
@@ -236,10 +241,8 @@ cout<<"Bem vindo "<<name<<", esta e a primeira versao do simulador de guerra do 
 cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
 
   
-  for(int i=0;i<19;i++){
-    cout<<namesbr[i]<<endl;
-recursiveSleep(0,20);
- }
+    recursivePrint(19,0,namesbr);
+
   
   cout<<"Escolha o primeiro pais: ";
   getline(cin,country);
