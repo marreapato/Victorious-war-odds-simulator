@@ -17,6 +17,29 @@ double odds(double won[],double wfoughts[],int pos1,int pos2){
   
   return oddsratio;
 }//function to calculate the odds ratio
+double cinsup(double won[],double wfoughts[],int pos1,int pos2){
+	
+	double odds1=(won[pos1]/(wfoughts[pos1]-won[pos1]));
+  
+  double odds2=(won[pos2]/(wfoughts[pos2]-won[pos2]));
+  
+  double oddsratio=odds1/odds2;
+  
+    double cisup=exp(log(oddsratio)+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
+return cisup;
+}
+double cinf(double won[],double wfoughts[],int pos1,int pos2){
+	
+	double odds1=(won[pos1]/(wfoughts[pos1]-won[pos1]));
+  
+  double odds2=(won[pos2]/(wfoughts[pos2]-won[pos2]));
+  
+  double oddsratio=odds1/odds2;
+  
+      double cinf=exp(log(oddsratio)-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
+
+return cinf;
+}
 
 
 
@@ -169,16 +192,14 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   //c is supposed to be the number of wars won by the 2nd country
   //d is supposed to be the number of losses by the 2nd
   
-  double cisup=exp(log(odds(won,wfoughts,pos1,pos2))+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
-    double cinf=exp(log(odds(won,wfoughts,pos1,pos2))-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
     
     cout<<endl<<endl;
     cout<<"The confidence interval for this measure is given by the range of:"<<endl;
     
-    cout<<fixed<<setprecision(2)<<"CI :("<<cinf<<" - "<<cisup<<")"<<endl<<endl;
+    cout<<fixed<<setprecision(2)<<"CI :("<<cinf(won,wfoughts,pos1,pos2)<<" - "<<cinsup(won,wfoughts,pos1,pos2)<<")"<<endl<<endl;
 
 
-if(cinf>0&&cinf<=1&&cisup>=1){
+if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,wfoughts,pos1,pos2)>=1){
 	cout<<"But these results have no significance which means you may be being tricked"<<endl;
 }
   
@@ -304,19 +325,15 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   	
   }
   cout<<endl;
-  
-  double cisup=exp(log(odds(won,wfoughts,pos1,pos2))+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
-    double cinf=exp(log(odds(won,wfoughts,pos1,pos2))-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
-    
-    
+
     
     cout<<endl<<endl;
     cout<<"O intervalo de confianca e dado por:"<<endl;
     
-    cout<<fixed<<setprecision(2)<<"CI :("<<cinf<<" - "<<cisup<<")"<<endl<<endl;
+    cout<<fixed<<setprecision(2)<<"CI :("<<cinf(won,wfoughts,pos1,pos2)<<" - "<<cinsup(won,wfoughts,pos1,pos2)<<")"<<endl<<endl;
 
 
-if(cinf>0&&cinf<=1&&cisup>=1){
+if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,wfoughts,pos1,pos2)>=1){
 	cout<<"Mas esses resultados nao tem significancia, portanto pode estar sendo enganado"<<endl;
 }
   
