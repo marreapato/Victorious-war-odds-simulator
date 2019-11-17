@@ -7,6 +7,19 @@
 
 
 using namespace std;
+
+double odds(double won[],double wfoughts[],int pos1,int pos2){
+	double odds1=(won[pos1]/(wfoughts[pos1]-won[pos1]));
+  
+  double odds2=(won[pos2]/(wfoughts[pos2]-won[pos2]));
+  
+  double oddsratio=odds1/odds2;
+  
+  return oddsratio;
+}//function to calculate the odds ratio
+
+
+
 //building some recursive algorithms 
 	
 /*string funame(string v[],int i,int tam){
@@ -130,24 +143,20 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   //calculating the odds
   
-  double odds1=(won[pos1]/(wfoughts[pos1]-won[pos1]));
   
-  double odds2=(won[pos2]/(wfoughts[pos2]-won[pos2]));
-  
-  double oddsratio=odds1/odds2;
   cout<<endl;
   cout<<" The odds of "<<names[pos1]<<" winning a war, when compared to the odds of "<<names[pos2]<<" winning it, are ";
   
-  if(round(oddsratio)<2&&round(oddsratio)>=1){
+  if(round(odds(won,wfoughts,pos1,pos2))<2&&round(odds(won,wfoughts,pos1,pos2))>=1){
   	cout<<"almost the same";
-  }else if(round(oddsratio)<1){
+  }else if(round(odds(won,wfoughts,pos1,pos2))<1){
   	
-  	cout<<setprecision(2)<<oddsratio<<" times worse";
+  	cout<<setprecision(2)<<odds(won,wfoughts,pos1,pos2)<<" times worse";
   
   	
   }else{
   	
-  	cout<<fixed<<setprecision(2)<<oddsratio<<" times superior";
+  	cout<<fixed<<setprecision(2)<<odds(won,wfoughts,pos1,pos2)<<" times superior";
   	
   }
   cout<<endl;
@@ -160,8 +169,8 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   //c is supposed to be the number of wars won by the 2nd country
   //d is supposed to be the number of losses by the 2nd
   
-  double cisup=exp(log(oddsratio)+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
-    double cinf=exp(log(oddsratio)-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
+  double cisup=exp(log(odds(won,wfoughts,pos1,pos2))+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
+    double cinf=exp(log(odds(won,wfoughts,pos1,pos2))-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
     
     cout<<endl<<endl;
     cout<<"The confidence interval for this measure is given by the range of:"<<endl;
@@ -278,30 +287,28 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   
   //calculating the odds
   
-  double odds1=(won[pos1]/(wfoughts[pos1]-won[pos1]));
-  
-  double odds2=(won[pos2]/(wfoughts[pos2]-won[pos2]));
-  
-  double oddsratio=odds1/odds2;
+
   cout<<endl;
   cout<<" As chances de "<<namesbr[pos1]<<" Ganhar uma guerra quando comparado com as de "<<namesbr[pos2]<<" ganhar, sao ";
   
-  if(round(oddsratio)<2&&round(oddsratio)>=1){
+  if(round(odds(won,wfoughts,pos1,pos2))<2&&round(odds(won,wfoughts,pos1,pos2))>=1){
   	cout<<"quase a mesma";
-  }else if(round(oddsratio)<1){
+  }else if(round(odds(won,wfoughts,pos1,pos2))<1){
   	
-  	cout<<setprecision(2)<<oddsratio<<" vezes menor";
+  	cout<<setprecision(2)<<odds(won,wfoughts,pos1,pos2)<<" vezes menor";
   
   	
   }else{
   	
-  	cout<<fixed<<setprecision(2)<<oddsratio<<" vezes maior";
+  	cout<<fixed<<setprecision(2)<<odds(won,wfoughts,pos1,pos2)<<" vezes maior";
   	
   }
   cout<<endl;
   
-  double cisup=exp(log(oddsratio)+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
-    double cinf=exp(log(oddsratio)-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
+  double cisup=exp(log(odds(won,wfoughts,pos1,pos2))+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
+    double cinf=exp(log(odds(won,wfoughts,pos1,pos2))-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
+    
+    
     
     cout<<endl<<endl;
     cout<<"O intervalo de confianca e dado por:"<<endl;
