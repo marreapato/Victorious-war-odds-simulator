@@ -41,6 +41,7 @@ int main(){
 	cin>>language;
 	cin.ignore();
 	string names[19]={"Australia","Canada","Saudi Arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","Uk","China","Indonesia","Japan","South Korea"};
+	string namesbr[19]={"Australia","Canada","Arabia Saudita","Estados Unidos","India","Russia","Africa Do Sul","Turquia","Argentina","Brasil","Mexico","Franca","Alemanha","Italia","Reino Unido","China","Indonesia","Japao","Coreia Do Sul"};
 
   string name;
   string country;
@@ -231,7 +232,7 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   
   
   for(int i=0;i<19;i++){
-    cout<<names[i]<<endl;
+    cout<<namesbr[i]<<endl;
     Sleep(600);
  }
   
@@ -247,7 +248,7 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   }
   
   for(int i=0;i<19;i++){
-  	if(names[i]==country){
+  	if(namesbr[i]==country){
   		pos1=i;
 	  }
   }
@@ -268,7 +269,7 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
 	  }
   }
   for(int i=0;i<19;i++){
-  	if(names[i]==country){
+  	if(namesbr[i]==country){
   		pos2=i;
 	  }
   }
@@ -283,7 +284,7 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   
   double oddsratio=odds1/odds2;
   cout<<endl;
-  cout<<" As chances de "<<names[pos1]<<" Ganhar uma guerra quando comparado com as de "<<names[pos2]<<" ganhar, sao ";
+  cout<<" As chances de "<<namesbr[pos1]<<" Ganhar uma guerra quando comparado com as de "<<namesbr[pos2]<<" ganhar, sao ";
   
   if(round(oddsratio)<2&&round(oddsratio)>=1){
   	cout<<"quase a mesma";
@@ -298,14 +299,6 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   	
   }
   cout<<endl;
-  //confidence interval and significance
-  
-  //ci = exp(log(or) ± Zl/2­*v1/a + 1/b + 1/c + 1/d), Z is the critical value, and it's supposed to be 1,96, cause we are calculating for a 95% confidence interval
-  //or is the odds ratio
-  //a is supposed the number of winnings by the 1nd country
-  //b is supposed to be the number of it's losses
-  //c is supposed to be the number of wars won by the 2nd country
-  //d is supposed to be the number of losses by the 2nd
   
   double cisup=exp(log(oddsratio)+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
     double cinf=exp(log(oddsratio)-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
