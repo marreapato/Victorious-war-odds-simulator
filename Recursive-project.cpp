@@ -160,6 +160,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   	  recursivePrint(19,0,names);
   	  
   }
+    
 }
   cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" wars and won "<<fixed<<setprecision(0)<<won[pos1]<<endl<<endl;
   
@@ -184,6 +185,12 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   	cout<<endl;
   	cout<<country<<" Is not available in our database, please select one of the following:"<<endl<<endl;
   	  recursivePrint(19,0,names);
+  }
+  if(wfoughts[pos2]==wfoughts[pos1]){
+  	cout<<endl;
+  		cout<<" You already selected this country, please select one of the following:"<<endl<<endl;
+  	  recursivePrint(19,0,names);
+  	  pos2=19;
   }
 }
   cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos2]<<" wars and won "<<fixed<<setprecision(0)<<won[pos2]<<endl;
@@ -326,6 +333,12 @@ pos2=search(0,country,namesbr,19);
   	cout<<endl;
   	cout<<country<<" Nao esta disponivel na nossa base dados, por favor selecione um dos seguintes:"<<endl<<endl;
   	  recursivePrint(19,0,namesbr);
+  }
+  if(wfoughts[pos2]==wfoughts[pos1]){
+  	cout<<endl;
+  		cout<<" Voce ja selecionou esse pais, por favor selecione um dos seguintes:"<<endl<<endl;
+  	  recursivePrint(19,0,namesbr);
+  	  pos2=19;
   }
 }
 
