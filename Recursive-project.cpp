@@ -94,7 +94,7 @@ int main(){
 	int freq=0;
 	//g20 countries down bellow
 	cout<<"Choose your language/Escolha seu idioma"<<endl;
-	cout<<"Press 0 for english/Aperte 1 para portugues"<<endl;
+	cout<<"Press 0 for english/Aperte um numero diferente de 0 para portugues"<<endl;
 	int language;
 	
 	cin>>language;
@@ -138,11 +138,11 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   recursivePrint(19,0,names);
   
-  cout<<"Choose the first country: ";
   int tamc;
   pos1=19;
   while(pos1==19){
-  
+   cout<<"Choose the first country: ";
+
   getline(cin,country);
   
    tamc=country.size();
@@ -154,24 +154,38 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   }
   
   pos1=search(0,country,names,19);
+  if(pos1==19){
+  	cout<<endl;
+  	cout<<country<<" Is not available in our database, please select one of the following:"<<endl<<endl;
+  	  recursivePrint(19,0,names);
+  	  
+  }
 }
   cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" wars and won "<<fixed<<setprecision(0)<<won[pos1]<<endl<<endl;
   
-  cout<<"Choose the second country(the one you are supposed to comparate): ";
   
-    getline(cin,country);
+     pos2=19;
+  while(pos2==19){
+  	  cout<<"Choose the second country(the one you are supposed to comparate): ";
+
   
-  tamc=country.size();
+  getline(cin,country);
   
+   tamc=country.size();
   country[0]=toupper(country[0]);
   for(int i=0;i<tamc;i++){
   	if(country[i]==' '){
   		country[i+1]=toupper(country[i+1]);
 	  }
   }
- pos2=search(0,country,names,19);
-
-
+  
+  pos2=search(0,country,names,19);
+  if(pos2==19){
+  	cout<<endl;
+  	cout<<country<<" Is not available in our database, please select one of the following:"<<endl<<endl;
+  	  recursivePrint(19,0,names);
+  }
+}
   cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos2]<<" wars and won "<<fixed<<setprecision(0)<<won[pos2]<<endl;
   
   //calculating the odds
@@ -258,11 +272,19 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   
     recursivePrint(19,0,namesbr);
 
+
+  int tamc;
   
+    
+
+       pos1=19;
+  while(pos1==19){
   cout<<"Escolha o primeiro pais: ";
+
+  
   getline(cin,country);
   
-  int tamc=country.size();
+   tamc=country.size();
   country[0]=toupper(country[0]);
   for(int i=0;i<tamc;i++){
   	if(country[i]==' '){
@@ -270,25 +292,42 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
 	  }
   }
   
-    pos1=search(0,country,namesbr,19);
+pos1=search(0,country,namesbr,19);
 
-  
+  if(pos1==19){
+  	cout<<endl;
+  	cout<<country<<" Nao esta disponivel na nossa base dados, por favor selecione um dos seguintes:"<<endl<<endl;
+  	  recursivePrint(19,0,namesbr);
+  }
+}
   
   cout<<country<<" Lutou "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" guerras e ganhou "<<fixed<<setprecision(0)<<won[pos1]<<endl<<endl;
   
+  
+    
+       pos2=19;
+  while(pos2==19){
   cout<<"Escolha o segundo pais(aquele que usara para como comparacao): ";
+
   
-    getline(cin,country);
+  getline(cin,country);
   
-  tamc=country.size();
-  
+   tamc=country.size();
   country[0]=toupper(country[0]);
   for(int i=0;i<tamc;i++){
   	if(country[i]==' '){
   		country[i+1]=toupper(country[i+1]);
 	  }
   }
-    pos2=search(0,country,namesbr,19);
+  
+pos2=search(0,country,namesbr,19);
+
+  if(pos2==19){
+  	cout<<endl;
+  	cout<<country<<" Nao esta disponivel na nossa base dados, por favor selecione um dos seguintes:"<<endl<<endl;
+  	  recursivePrint(19,0,namesbr);
+  }
+}
 
   
   cout<<country<<" Lutou "<<fixed<<setprecision(0)<<wfoughts[pos2]<<" guerras e ganhou "<<fixed<<setprecision(0)<<won[pos2]<<endl;
