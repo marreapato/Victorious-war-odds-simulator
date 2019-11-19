@@ -221,7 +221,7 @@ if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,w
   
   cout<<"Would you like to continue?"<<endl;
   
-  cout<<"Yes or No? R = ";
+  cout<<"Yes or No? Please insert (no) or (No) if you desire to turn off the program, otherwhise the program will keep going :D R = ";
   
   string opt;
   
@@ -365,7 +365,7 @@ if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,w
   
   cout<<"Quer continuar?"<<endl;
   
-  cout<<"Sim ou Nao? R = ";
+  cout<<"Sim ou Nao? Por favor, escreva (nao) ou (Nao) caso deseje sair, caso contrario o programa vai rodar mais uma vez :D R = ";
   
   string opt;
   
