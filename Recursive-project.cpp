@@ -54,11 +54,22 @@ return cinf;
 //building some recursive algorithms 
 
 int search(int i,string country,string names[],int size){
-    	if(names[i]!=country){
-    		return search(i + 1,country,names,size);
-		}else{
+    	
+		if(i<size){
 		
-		return i;
+		if(names[i]!=country){
+    		return search(i + 1,country,names,size);
+			
+			
+			
+			}else if(names[i]==country){
+				return i;
+			
+			
+		}
+		
+		}else{
+			return 19;
 		}
 	}//recursive search
 
@@ -128,9 +139,13 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   recursivePrint(19,0,names);
   
   cout<<"Choose the first country: ";
+  int tamc;
+  pos1=19;
+  while(pos1==19){
+  
   getline(cin,country);
   
-  int tamc=country.size();
+   tamc=country.size();
   country[0]=toupper(country[0]);
   for(int i=0;i<tamc;i++){
   	if(country[i]==' '){
@@ -139,7 +154,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   }
   
   pos1=search(0,country,names,19);
-  
+}
   cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" wars and won "<<fixed<<setprecision(0)<<won[pos1]<<endl<<endl;
   
   cout<<"Choose the second country(the one you are supposed to comparate): ";
