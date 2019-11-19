@@ -96,7 +96,7 @@ int main(){
 	cout<<"Choose your language/Escolha seu idioma"<<endl;
 	cout<<"Press 0 for english/Aperte um numero diferente de 0 para portugues"<<endl;
 	int language;
-	
+	int upp;
 	cin>>language;
 	cin.ignore();
 	string names[19]={"Australia","Canada","Saudi Arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","Uk","China","Indonesia","Japan","South Korea"};
@@ -140,18 +140,26 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   int tamc;
   pos1=19;
+  
   while(pos1==19){
    cout<<"Choose the first country: ";
 
   getline(cin,country);
-  
+  upp=0;
    tamc=country.size();
   country[0]=toupper(country[0]);
-  for(int i=0;i<tamc;i++){
+  
+  for(int i=1;i<tamc;i++){
   	if(country[i]==' '){
   		country[i+1]=toupper(country[i+1]);
+  		upp=i+1;
+	  }else if(i!=upp){
+	  
+	  	  		country[i]=tolower(country[i]);
+
 	  }
-  }
+  }//leaving the name the way i want to
+  
   
   pos1=search(0,country,names,19);
   if(pos1==19){
@@ -174,11 +182,18 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
    tamc=country.size();
   country[0]=toupper(country[0]);
-  for(int i=0;i<tamc;i++){
+  upp=0;
+  for(int i=1;i<tamc;i++){
   	if(country[i]==' '){
   		country[i+1]=toupper(country[i+1]);
+  		upp=i+1;
+	  }else if(i!=upp){
+	  
+	  	  		country[i]=tolower(country[i]);
+
 	  }
-  }
+  }//leaving the name the way i want to
+  
   
   pos2=search(0,country,names,19);
   if(pos2==19){
@@ -293,11 +308,18 @@ cout<<"De uma olhada nos paises do G20: "<<endl<<endl;
   
    tamc=country.size();
   country[0]=toupper(country[0]);
-  for(int i=0;i<tamc;i++){
+  int upp=0;
+  for(int i=1;i<tamc;i++){
   	if(country[i]==' '){
   		country[i+1]=toupper(country[i+1]);
+  		upp=i+1;
+	  }else if(i!=upp){
+	  
+	  	  		country[i]=tolower(country[i]);
+
 	  }
-  }
+  }//leaving the name the way i want to
+  
   
 pos1=search(0,country,namesbr,19);
 
@@ -321,11 +343,18 @@ pos1=search(0,country,namesbr,19);
   
    tamc=country.size();
   country[0]=toupper(country[0]);
-  for(int i=0;i<tamc;i++){
+  upp=0;
+  for(int i=1;i<tamc;i++){
   	if(country[i]==' '){
   		country[i+1]=toupper(country[i+1]);
+  		upp=i+1;
+	  }else if(i!=upp){
+	  
+	  	  		country[i]=tolower(country[i]);
+
 	  }
-  }
+  }//leaving the name the way i want to
+  
   
 pos2=search(0,country,namesbr,19);
 
