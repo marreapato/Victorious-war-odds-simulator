@@ -18,7 +18,7 @@ double odds(double won[],double wfoughts[],int pos1,int pos2){
   return oddsratio;
 }//function to calculate the odds ratio
 
-  //confidence interval and significance
+  //confidence interval and significance explanation
   
   //ci = exp(log(or) ± Zl/2­*v1/a + 1/b + 1/c + 1/d), Z is the critical value, and it's supposed to be 1,96, cause we are calculating for a 95% confidence interval
   //or is the odds ratio
@@ -36,7 +36,8 @@ double cinsup(double won[],double wfoughts[],int pos1,int pos2){
   
     double cisup=exp(log(oddsratio)+(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//superior
 return cisup;
-}
+}//calculating the superior part of the confidence interval
+
 double cinf(double won[],double wfoughts[],int pos1,int pos2){
 	
 	double odds1=(won[pos1]/(wfoughts[pos1]-won[pos1]));
@@ -48,10 +49,10 @@ double cinf(double won[],double wfoughts[],int pos1,int pos2){
       double cinf=exp(log(oddsratio)-(1.96*(sqrt((1/won[pos1])+(1/wfoughts[pos1])+(1/won[pos2])+(1/wfoughts[pos2])))));//inferior
 
 return cinf;
-}
+}//calculating the inferior part of the confidence interval
 
 
-//building some recursive algorithms 
+//building some recursive algorithms down bellow
 
 int search(int i,string country,string names[],int size){
     	
@@ -69,9 +70,11 @@ int search(int i,string country,string names[],int size){
 		}
 		
 		}else{
-			return 19;
+			return size;
 		}
-	}//recursive search
+	}//recursive search, if the country is found it return it's position, otherwise returns returns the size,
+	// in the algorithm if the position is equal to size the program keeps asking for the input
+	
 
 
 int recursiveSleep(int i,int size){
@@ -80,7 +83,7 @@ int recursiveSleep(int i,int size){
 		Sleep(i);
 		return recursiveSleep(i+1,size);
 	}
-}
+}//a recursive sleep, in this recursive function every 10 seconds is equal to 1 second;
 
 int recursivePrint(int size,int i, string names[]){
  	if(i<size){
@@ -88,27 +91,37 @@ int recursivePrint(int size,int i, string names[]){
  		Sleep(200);
  		return recursivePrint(size,i+1,names);
 	 }
- }
+ }//a function that uses recursive calls to print the country names
 
 int main(){
 	int freq=0;
-	//g20 countries down bellow
+	
 	cout<<"Choose your language/Escolha seu idioma"<<endl;
+	
 	cout<<"Press 0 for english/Aperte um numero diferente de 0 para portugues"<<endl;
-	int language;
-	int upp;
+	
+	int language;//to select a language
+	
+	int upp;//a position variable used to switch letters to uppercase, in the desired country input
+	
 	cin>>language;
+	
 	cin.ignore();
+	
+		//g20 countries down bellow
+		
 	string names[19]={"Australia","Canada","Saudi Arabia","United States","India","Russia","South Africa","Turkey","Argentina","Brazil","Mexico","France","Germany","Italy","Uk","China","Indonesia","Japan","South Korea"};
 	string namesbr[19]={"Australia","Canada","Arabia Saudita","Estados Unidos","India","Russia","Africa Do Sul","Turquia","Argentina","Brasil","Mexico","Franca","Alemanha","Italia","Reino Unido","China","Indonesia","Japao","Coreia Do Sul"};
 
-  string name;
-  string country;
+  string name;//user name
+  
+  string country;//desired country
+  
   int pos1,pos2;
   
-    double wfoughts[19]={13,20,51,121,107,171,15,19,34,63,43,168,27,33,158,32,90,38,6};
+    double wfoughts[19]={13,20,51,121,107,171,15,19,34,63,43,168,27,33,158,32,90,38,6};//mirrowed vector, wars fought by each G20 country
   
-    double won[19]={8,17,30,95,67,110,7,12,17,59,34,109,14,24,110,13,67,22,4}; 
+    double won[19]={8,17,30,95,67,110,7,12,17,59,34,109,14,24,110,13,67,22,4};//Wars won by each country
   if(language==0){
   
   while(1){
@@ -118,14 +131,14 @@ int main(){
 
   getline(cin,name);
   
-  name[0]=toupper(name[0]);
+  name[0]=toupper(name[0]);//first letter to upper case
   
-  int tamnam=name.size();
+  int tamnam=name.size();//name's length
   
   for(int i=0;i<tamnam;i++){
   	
   	if(name[i]==' '){
-  		name[i+1]=toupper(name[i+1]);
+  		name[i+1]=toupper(name[i+1]);//first letter after a space becomes upper case
 	  }
   	
   }//all the first letters of the names and surnames to upper case
@@ -138,10 +151,11 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   
   recursivePrint(19,0,names);
   
-  int tamc;
-  pos1=19;
+  int tamc;//size of the country
   
-  while(pos1==19){
+  pos1=19;//size of the g20 countries array
+  
+  while(pos1==19){//if the position is equal to the size, the algorithm will ask again for a different input
    cout<<"Choose the first country: ";
 
   getline(cin,country);
@@ -158,16 +172,17 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
 	  	  		country[i]=tolower(country[i]);
 
 	  }
-  }//leaving the name the way i want to
+  }//leaving the country name in a way the algorithm recognises;
   
   
   pos1=search(0,country,names,19);
+  
   if(pos1==19){
   	cout<<endl;
   	cout<<country<<" Is not available in our database, please select one of the following:"<<endl<<endl;
   	  recursivePrint(19,0,names);
   	  
-  }
+  }//if the couuntry is not available in the WS1's memory
     
 }
   cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos1]<<" wars and won "<<fixed<<setprecision(0)<<won[pos1]<<endl<<endl;
@@ -206,11 +221,11 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
   		cout<<" You already selected this country, please select one of the following:"<<endl<<endl;
   	  recursivePrint(19,0,names);
   	  pos2=19;
-  }
+  }//if the new input is equal to the previous one
 }
   cout<<country<<" Fought "<<fixed<<setprecision(0)<<wfoughts[pos2]<<" wars and won "<<fixed<<setprecision(0)<<won[pos2]<<endl;
   
-  //calculating the odds
+  //calculating the odds don bellow
   
   
   cout<<endl;
@@ -238,12 +253,12 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
 
 
 if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,wfoughts,pos1,pos2)>=1){
-	cout<<"But these results have no significance which means you may be being tricked"<<endl;
+	cout<<"But these results have no significance which means you may be being tricked"<<endl<<endl;
 }
   
   cout<<"Would you like to continue?"<<endl;
   
-  cout<<"Yes or No? Please insert (no) or (No) if you desire to turn off the program, otherwhise the program will keep going :D R = ";
+  cout<<"Yes or No? Please insert (no) or (No) if you desire to turn off the program, any different input will make the program keep going :D R = ";
   
   string opt;
   
@@ -263,8 +278,8 @@ if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,w
   
   return 0;
   
-  }
-  freq++;
+  }//ending program
+  freq++;//frequency variable is not equal to 0 anymore so the program doesn't welcome the user anymore
 }
 }else{
 	
@@ -407,7 +422,7 @@ if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,w
   
   cout<<"Quer continuar?"<<endl;
   
-  cout<<"Sim ou Nao? Por favor, escreva (nao) ou (Nao) caso deseje sair, caso contrario o programa vai rodar mais uma vez :D R = ";
+  cout<<"Sim ou Nao? Por favor, escreva (nao) ou (Nao) caso deseje sair, qualquer resposta diferente fara o programa rodar mais uma vez :D R = ";
   
   string opt;
   
