@@ -252,7 +252,7 @@ cout<<"Take a look at the G20 countries: "<<endl<<endl;
     cout<<fixed<<setprecision(2)<<"CI :("<<cinf(won,wfoughts,pos1,pos2)<<" - "<<cinsup(won,wfoughts,pos1,pos2)<<")"<<endl<<endl;
 
 
-if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,wfoughts,pos1,pos2)>=1){
+if(cinf(won,wfoughts,pos1,pos2)<1&&cinsup(won,wfoughts,pos1,pos2)>=1){
 	cout<<"But these results have no significance which means you may be being tricked"<<endl<<endl;
 }
   
@@ -266,6 +266,7 @@ if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,w
   cin.ignore();
   
   if(opt=="no"||opt=="No"){
+  	cout<<endl;
   	cout<<"Well, it was nice to meet you "<<name<<endl;
   	recursiveSleep(0,20);
   	cout<<"See you soon!"<<endl;
@@ -416,7 +417,7 @@ pos2=search(0,country,namesbr,19);
     cout<<fixed<<setprecision(2)<<"CI :("<<cinf(won,wfoughts,pos1,pos2)<<" - "<<cinsup(won,wfoughts,pos1,pos2)<<")"<<endl<<endl;
 
 
-if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,wfoughts,pos1,pos2)>=1){
+if(cinf(won,wfoughts,pos1,pos2)<1&&cinsup(won,wfoughts,pos1,pos2)>=1){
 	cout<<"Mas esses resultados nao tem significancia, portanto pode estar sendo enganado"<<endl;
 }
   
@@ -430,6 +431,7 @@ if(cinf(won,wfoughts,pos1,pos2)>0&&cinf(won,wfoughts,pos1,pos2)<=1&&cinsup(won,w
   cin.ignore();
   
   if(opt=="nao"||opt=="Nao"){
+  	cout<<endl;
   	cout<<"Foi bom te conhecer! "<<name<<endl;
   	recursiveSleep(0,20);
   	cout<<"Te vejo em breve!"<<endl;
