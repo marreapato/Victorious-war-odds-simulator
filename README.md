@@ -61,11 +61,11 @@ For the second measure p2(second group), the calculation is similar;
 
 So the odds ratio is given by r=p1/p2 and if:
 
- r=1, p1 and p2 have the same likeability of occurring;
+ r=1, p1 and p2 have the same probability of occurring;
 
- r<1; p1 is most unlikable to happen than  p2;
+ r<1; p1 is most improbable to happen than  p2;
 
-r>1; p1 is most likeable to happen than p2;
+r>1; p1 is most probable to happen than p2;
 
 In order to calculate the confidence interval we have:
 
