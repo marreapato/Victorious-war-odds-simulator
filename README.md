@@ -43,7 +43,7 @@ South Korea;
 
 # **What’s an odds ratio?**
 
-Usually used in epidemiological studies the odds ratio is a statistic utilized by statisticians and researchers to analyse the risk of one group exposed to some characteristic that would be interesting for the study, in comparison to another group that wasn’t exposed to that characteristic.
+Usually used in epidemiological studies the odds ratio is a statistic utilized by statisticians and researchers to analyse the risk of one group exposed to some characteristic that would be interesting for the study, in comparison to another group that wasn’t exposed to that characteristic, developing a disease.
 
  In this project the odds ratio were adapted to calculate the odds of a country winning a war, when compared to other(Be careful: The algorithm does not calculate the odds of one country winning a war against another one, but the odds of a country winning a war when compared to another one).
 
